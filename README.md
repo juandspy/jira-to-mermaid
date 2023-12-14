@@ -48,3 +48,18 @@ pipe it into a file:
 ```
 ❯ ./csv-to-mermaid.py > generated_mermaid_code.mmd
 ```
+
+## Format of the CSV file
+
+In order to get a CSV out of your tasks, you may need to visit {YOUR_JIRA_URL}/issues/
+and apply some filters. Then just click on "Export" and download the CSV.
+
+The columns this tool needs are:
+- Issue key
+- Issue Type
+- Status
+- Summary
+
+Any column like `{Outward|Inward} issue link ({TYPE})` will be treated as an in/out
+link of type `TYPE`. You can better understand this by checking the
+[epic-1.csv](examples/epic-1.csv) file.
