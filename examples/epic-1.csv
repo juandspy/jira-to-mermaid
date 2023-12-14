@@ -1,0 +1,7 @@
+Issue Type ,Issue key ,Issue id ,Status      ,Summary                                                            ,Outward issue link (Blocks) ,Outward issue link (Blocks)
+Epic       ,CCXDEV-0  ,       0 ,In Progress ,Tool to generate diagrams based on Jira epics                      ,                            ,
+Task       ,CCXDEV-1  ,       1 ,Closed      ,Create the repository                                              ,CCXDEV-5                    ,
+Bug        ,CCXDEV-2  ,       2 ,To Do       ,Importing mermaid diagrams into drawio doesn't inherit the styling ,                            ,CCXDEV-4
+Spike      ,CCXDEV-3  ,       3 ,To Do       ,Investigate how to group tasks in subgraphs                        ,                            ,
+Story      ,CCXDEV-4  ,       4 ,Code Review ,As a user I want to be able to move the nodes manually in a UI     ,                            ,
+Task       ,CCXDEV-5  ,       5 ,To Do       ,Push the code to the repo                                          ,                            ,

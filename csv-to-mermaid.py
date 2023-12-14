@@ -131,9 +131,11 @@ def main():
     issues: List[Issue] = []
 
     with open(args.csv_file, newline="", encoding="utf-8") as csvfile:
-        reader = csv.reader(csvfile, quotechar='"', delimiter=",")
+        reader = csv.reader(csvfile, quotechar='"', delimiter=",", skipinitialspace=False)
         header = next(reader)  # Skip the header row
+        header = [x.strip() for x in header]
         for row in reader:
+            row = [x.strip() for x in row]
             issues.append(csv_row_to_issue(row, header))
 
     generate_mermaid_code(issues, args.ignore_links)
