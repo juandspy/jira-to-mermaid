@@ -4,20 +4,21 @@ This tool lets you represent Jira tasks as mermaid diagrams. For example,
 the CSV file [epic-1.csv](examples/epic-1.csv) is represented as:
 ```mermaid
 graph TD;
-	CCXDEV_0("CCXDEV-0 (IssueStatus.IN_PROGRESS)\nTool to generate diagrams based on Jira epics"):::IN_PROGRESS
-	CCXDEV_1["CCXDEV-1 (IssueStatus.CLOSED)\nCreate the repository"]:::CLOSED
+	CCXDEV_0("CCXDEV-0 (In Progress)\nTool to generate diagrams based on Jira epics"):::IN_PROGRESS
+	CCXDEV_1["CCXDEV-1 (Closed)\nCreate the repository"]:::CLOSED
 	CCXDEV_1 -- Blocks --> CCXDEV_5
-	CCXDEV_2(("CCXDEV-2 (IssueStatus.TODO)\nImporting mermaid diagrams into drawio doesn't inherit the styling")):::TODO
+	CCXDEV_2(("CCXDEV-2 (To Do)\nImporting mermaid diagrams into drawio doesn't inherit the styling")):::TODO
 	CCXDEV_2 -- Blocks --> CCXDEV_4
-	CCXDEV_3{"CCXDEV-3 (IssueStatus.TODO)\nInvestigate how to group tasks in subgraphs"}:::TODO
-	CCXDEV_4("CCXDEV-4 (IssueStatus.CODE_REVIEW)\nAs a user I want to be able to move the nodes manually in a UI"):::CODE_REVIEW
-	CCXDEV_5["CCXDEV-5 (IssueStatus.TODO)\nPush the code to the repo"]:::TODO
+	CCXDEV_3{"CCXDEV-3 (To Do)\nInvestigate how to group tasks in subgraphs"}:::TODO
+	CCXDEV_4("CCXDEV-4 (Code Review)\nAs a user I want to be able to move the nodes manually in a UI"):::CODE_REVIEW
+	CCXDEV_5["CCXDEV-5 (To Do)\nPush the code to the repo"]:::TODO
 
     classDef TODO fill:#ff9933
     classDef CLOSED fill:#33cc33
     classDef IN_PROGRESS fill:#33ccff
     classDef CODE_REVIEW fill:#ffff66
     classDef REVIEW fill:#ffcc00
+
 ```
 
 ## How tu run

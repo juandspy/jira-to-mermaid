@@ -75,7 +75,7 @@ class Issue:
         cleaned_summary = self.summary.replace('"', "'")
         
         out = f"{jira_key_to_mermaid_id(self.key)}"
-        out += f"{shape_left}\"{self.key} ({self.status})\\n{cleaned_summary}\"{shape_right}"
+        out += f"{shape_left}\"{self.key} ({self.status.value})\\n{cleaned_summary}\"{shape_right}"
         out += f":::{self.status.name}" # add the styling class
         return out
 
