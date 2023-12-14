@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import csv
 from enum import Enum
 from typing import List
@@ -92,7 +94,7 @@ def csv_row_to_issue(row, header):
         in_links=in_links,
     )
 
-def generate_mermaid_code(issues: List[Issue], ignore_links = []):
+def generate_mermaid_code(issues: List[Issue], ignore_links = []) -> str:
     mermaid_code = "graph TD;\n"
 
     for issue in issues:
@@ -117,14 +119,13 @@ def generate_mermaid_code(issues: List[Issue], ignore_links = []):
     classDef IN_PROGRESS fill:#33ccff
     classDef CODE_REVIEW fill:#ffff66
     classDef REVIEW fill:#ffcc00"""
+    return mermaid_code
 
-    with open("generated_mermaid_code.mmd", "w", encoding="utf-8") as mermaid_file:
-        mermaid_file.write(mermaid_code)
 
 def main():
     parser = argparse.ArgumentParser(description="Generate Mermaid code from a Jira CSV file.")
-    parser.add_argument("--csv_file", default="issues.csv", help="Path to the Jira CSV file")
-    parser.add_argument("--ignore_links", nargs="*", default=["Cloners"], help="Links to ignore")
+    parser.add_argument("--csv_file", default="issues.csv", help="Path to the Jira CSV file. Default is 'issues.csv'")
+    parser.add_argument("--ignore_links", nargs="*", default=["Cloners"], help="Links to ignore. Default is '[Cloners]'")
 
     args = parser.parse_args()
 
@@ -138,7 +139,8 @@ def main():
             row = [x.strip() for x in row]
             issues.append(csv_row_to_issue(row, header))
 
-    generate_mermaid_code(issues, args.ignore_links)
+    code = generate_mermaid_code(issues, args.ignore_links)
+    print(code)
 
 if __name__ == "__main__":
     main()
