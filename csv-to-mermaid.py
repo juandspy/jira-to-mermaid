@@ -59,7 +59,6 @@ class Issue:
         return out
 
     def to_mermaid_node(self) -> str:
-        # TODO: color by kind
         match self.kind:
             case IssueType.TASK:
                 shape_left = "["
