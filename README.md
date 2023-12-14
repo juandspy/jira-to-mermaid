@@ -23,8 +23,7 @@ graph TD;
 
 ## How tu run
 
-You don't need any dependencies apart from Python. I've used Python 3.11, but any version
-< 3.10 should work.
+You don't need any dependencies apart from Python. I've used Python 3.11, but any version > 3.10 should work.
 
 Running the tool is as simple as this:
 ```
