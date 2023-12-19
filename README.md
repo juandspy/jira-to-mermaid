@@ -74,7 +74,8 @@ options:
 ```
 
 You can specify an input CSV and some links to ignore. By default it ignores the
-`Cloners`  because I personally find them quite useless.
+`Cloners`  because I personally find them quite useless. Regarding the node shapes,
+you can find all the available shapes in https://mermaid.js.org/syntax/flowchart.html#node-shapes.
 
 The code is then printed to the stdout, so you can retrieve it with `pbcopy` or
 pipe it into a file:
