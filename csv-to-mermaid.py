@@ -152,15 +152,21 @@ def generate_mermaid_code(
 
         for out_link in issue.out_links:
             if out_link.kind not in ignore_links:
-                mermaid_code += f"\t{jira_key_to_mermaid_id(issue.key)} "
-                mermaid_code += f"-- {out_link.kind} --> " if out_link.kind else " --> "
-                mermaid_code += f"{jira_key_to_mermaid_id(out_link.key)}\n"
+                new_line = f"\t{jira_key_to_mermaid_id(issue.key)} "
+                new_line += f"-- {out_link.kind} --> " if out_link.kind else " --> "
+                new_line += f"{jira_key_to_mermaid_id(out_link.key)}\n"
+                if new_line in mermaid_code:
+                    continue
+                mermaid_code += new_line
 
         for in_link in issue.in_links:
             if in_link.kind not in ignore_links:
-                mermaid_code += f"\t{jira_key_to_mermaid_id(in_link.key)} "
-                mermaid_code += f"-- {in_link.kind} --> " if in_link.kind else " --> "
-                mermaid_code += f"{jira_key_to_mermaid_id(issue.key)}\n"
+                new_line = f"\t{jira_key_to_mermaid_id(in_link.key)} "
+                new_line += f"-- {in_link.kind} --> " if in_link.kind else " --> "
+                new_line += f"{jira_key_to_mermaid_id(issue.key)}\n"
+                if new_line in mermaid_code:
+                    continue
+                mermaid_code += new_line
 
 
     mermaid_code += f"""
